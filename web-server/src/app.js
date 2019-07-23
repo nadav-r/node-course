@@ -21,7 +21,8 @@ app.use(express.static(publicDirectoryPath));
 app.get('', (req, res) => {
     res.render('index',{
         title:'Weather App',
-        name: 'nadav'
+        name: 'nadav',
+        letters: ['a','b','c']
     });
 });
 
@@ -43,6 +44,22 @@ app.get('/weather', (req, res) => {
     res.send({
         location:'tel aviv',
         forecast: 20
+    })
+})
+
+app.get('/help/*', (req, res) => {
+    res.render('404', {
+        message: 'Help article not found',
+        title: '404 page!',
+        name:'nadav'
+    })
+})
+
+app.get('*', (req,res) =>{
+    res.render('404', {
+        message: 'Page not found',
+        title: '404 page',
+        name:'nadav'
     })
 })
 
