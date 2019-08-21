@@ -1,9 +1,30 @@
 console.log('Client side js is loaded!');
-// setTimeout(()=>{
-//     const el =  document.getElementsByTagName('img')[0];
-//    el.style.display='none'
-//    console.log('here');
-//    setTimeout(()=>{
-//        el.style.display='block'
-//    },500)
-// },2000)
+
+
+const weatherForm = document.querySelector('form')
+const search = document.querySelector('input')
+const messageOne = document.querySelector('#message-1')
+const messageTwo = document.querySelector('#message-2')
+
+weatherForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    messageOne.textContent = 'Loading...'
+    messageTwo.textContent = ''
+    fetch('http://localhost:3000/weather?address=' + search.value).then(response => {
+        response.json().then(data => {
+            if (data.error) {
+                console.log(data.error)
+                messageOne.textContent = 'Invalid Address'
+                messageTwo.textContent = ''
+            }
+            else {
+                console.log(data.location)
+                console.log(data.forecast)
+                messageOne.textContent = data.location
+                messageTwo.textContent = data.forecast
+
+
+            }
+        })
+    })
+})
