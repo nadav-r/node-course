@@ -33,9 +33,6 @@ fs.writeFileSync('1-json.json',JSON.stringify(obj));
 
 //change 2 in master
 
-<<<<<<< HEAD
 
 //change 3 in master
 
-=======
->>>>>>> 3808e266eafe21b4796d3a28df4e3598c053b39c
