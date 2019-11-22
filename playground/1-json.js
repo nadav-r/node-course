@@ -22,10 +22,20 @@ fs.writeFileSync('1-json.json',JSON.stringify(obj));
 // const data = JSON.parse(dataJSON);
 // console.log(data.auther);
 
+
+
+// change 1 in test branch
+// change 2 in test branch
+
+//change 1 in master
+
 //change 1 in master
 
 //change 2 in master
 
+<<<<<<< HEAD
 
 //change 3 in master
 
+=======
+>>>>>>> 3808e266eafe21b4796d3a28df4e3598c053b39c
